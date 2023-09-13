@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+}
+
+<div class="jumbotron">
+    <h1>Convertidor de temperatura</h1>
+    <p class="lead">Equipo 4 9°J Servicios Web</p>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Temperatura</h2>
+            <p><input type="text" id="temperatura" name="temperatura"/></p>
+            <p>Selecciona una opción:</p>
+            <p><input type="radio" id="cf" name="convertirTemp" value="1" /><label for="cf"> Convertir celsius a farenheit</label></p>
+            <p><input type="radio" id="fc" name="convertirTemp" value="2" /><label for="fc"> Convertir farenheit a celsius</label></p>
+            <h2><label>Resultado:</label></h2>
+            <p>@ViewBag.resultado</p>
+            <input type="submit" name="respuesta" value="Convertir" formaction=@Url.Action("Convertir") formmethod="post" />
+        </div>
+    </div>
+}
